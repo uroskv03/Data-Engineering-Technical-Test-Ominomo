@@ -34,7 +34,7 @@ At the end, all these changes are saved in the dfs dictionary so we can use them
 ### Sinks
 For each input from sinks found in the dfs dictionary, we get the corresponding DataFrame and save the file with the given format, mode, and location.
 
-### Note:
+### Note
 I slightly modified the input JSON. I changed the paths to the input and output files to make them more intuitive for me.
 Also, inside validations, it said "validations", so I changed it to "rules" there to make it easier to differentiate.
 
