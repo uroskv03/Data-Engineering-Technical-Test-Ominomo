@@ -40,9 +40,13 @@ Also, inside validations, it said "validations", so I changed it to "rules" ther
 
 ## Run
 Builds the image (with dockerfile):
+``
 docker build -t ominimo-test .
+``
 
 Uses that built image (without dockerfile):
-docker run -v "${PWD}/data:/app/data" ominimo-test
 
+``
+docker run -v "${PWD}/data:/app/data" ominimo-test
+``
 
