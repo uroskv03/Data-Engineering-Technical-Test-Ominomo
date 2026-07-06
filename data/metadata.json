@@ -1,0 +1,53 @@
+{
+  "dataflows": [
+    {
+      "name": "motor-ingestion",
+      "sources": [
+        {
+          "name": "policy_inputs",
+          "path": "data/motor_policy.json",
+          "format": "JSON"
+        }
+      ],
+      "transformations": [
+        {
+          "name": "validation",
+          "type": "validate_fields",
+          "params": {
+            "input": "policy_inputs",
+            "validations": [
+              {"field": "plate_number", "rules": ["notEmpty"]},
+              {"field": "driver_age", "rules": ["notNull"]}
+            ]
+          }
+        },
+        {
+          "name": "add_ingestion_date",
+          "type": "add_fields",
+          "params": {
+            "input": "validation_ok",
+            "addFields": [
+              {"name": "ingestion_dt", "function": "current_timestamp"}
+            ]
+          }
+        }
+      ],
+      "sinks": [
+        {
+          "input": "add_ingestion_date",
+          "name": "raw-ok",
+          "path": "data/output/ok",
+          "format": "JSON",
+          "saveMode": "OVERWRITE"
+        },
+        {
+          "input": "validation_ko",
+          "name": "raw-ko",
+          "path": "data/output/ko",
+          "format": "JSON",
+          "saveMode": "OVERWRITE"
+        }
+      ]
+    }
+  ]
+}

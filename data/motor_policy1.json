@@ -1,0 +1,6 @@
+{"policy_number":"OK_001","driver_age":25,"plate_number":"bg-123-aa"}
+{"policy_number":"KO_EMPTY_PLATE","driver_age":40,"plate_number":""}
+{"policy_number":"KO_YOUNG_DRIVER","driver_age":16,"plate_number":"NS-999-BB"}
+{"policy_number":"KO_NO_AGE","plate_number":"NI-111-CC"}
+{"policy_number":"OK_MIXED_CASE","driver_age":65,"plate_number":"kg-001-zz"}
+{"policy_number":"KO_DOUBLE_ERROR","driver_age":10,"plate_number":""}
