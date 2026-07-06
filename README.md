@@ -39,13 +39,13 @@ I slightly modified the input JSON. I changed the paths to the input and output 
 Also, inside validations, it said "validations", so I changed it to "rules" there to make it easier to differentiate.
 
 ## Run
-Builds the image (with dockerfile)
+Builds the image 
 
 ``
 docker build -t ominimo-test .
 ``
 
-Uses that built image (without dockerfile)
+Uses that built image
 
 ``
 docker run -v "${PWD}/data:/app/data" ominimo-test
